@@ -1,0 +1,41 @@
+[package]
+name = "manufactorum"
+version = "0.1.0"
+authors = ["James Clague <james.clague@brct.io>"]
+edition = "2021"
+readme = "README.md"
+keywords = ["api", "boilerplate", "game"]
+categories = []
+description = ""
+homepage = "https://github.com/brct-james/manufactorum"
+repository = "https://github.com/brct-james/manufactorum"
+documentation = "https://docs.rs/manufactorum"
+exclude = []
+
+[lib]
+name = "manufactorum"
+path = "src/lib.rs"
+
+[features]
+default = ["full"]
+postgres = [
+    # "dep:async-trait",
+    "dep:sqlx"
+    ]
+markets = ["npc_market"]
+npc_market = ["postgres"]
+harvesting = []
+jwt = ["dep:jsonwebtoken"]
+full = ["markets", "harvesting", "jwt"]
+
+# [dev-dependencies.tokio]
+# version = "1.27"
+# features = ["full"]
+
+[dependencies]
+# async-trait = { version = "0.1.68", optional = true }
+jsonwebtoken = { version = "8.3.0", optional = true }
+[dependencies.sqlx]
+version = "0.6.3"
+features = ["runtime-tokio-rustls", "postgres", "json"]
+optional = true

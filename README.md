@@ -1,0 +1,3 @@
+# manufactorum
+
+A rust library
