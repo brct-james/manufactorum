@@ -17,16 +17,16 @@ name = "manufactorum"
 path = "src/lib.rs"
 
 [features]
-default = ["full"]
-postgres = [
-    # "dep:async-trait",
-    "dep:sqlx"
-    ]
-markets = ["npc_market"]
-npc_market = ["postgres"]
-harvesting = []
-jwt = ["dep:jsonwebtoken"]
-full = ["markets", "harvesting", "jwt"]
+# default = ["full"]
+# postgres = [
+#     # "dep:async-trait",
+#     "dep:sqlx"
+#     ]
+# markets = ["npc_market"]
+# npc_market = ["postgres"]
+# harvesting = []
+# jwt = ["dep:jsonwebtoken"]
+# full = ["markets", "harvesting", "jwt"]
 
 # [dev-dependencies.tokio]
 # version = "1.27"
@@ -34,8 +34,8 @@ full = ["markets", "harvesting", "jwt"]
 
 [dependencies]
 # async-trait = { version = "0.1.68", optional = true }
-jsonwebtoken = { version = "8.3.0", optional = true }
-[dependencies.sqlx]
-version = "0.6.3"
-features = ["runtime-tokio-rustls", "postgres", "json"]
-optional = true
+# jsonwebtoken = { version = "8.3.0", optional = true }
+# [dependencies.sqlx]
+# version = "0.6.3"
+# features = ["runtime-tokio-rustls", "postgres", "json"]
+# optional = true
